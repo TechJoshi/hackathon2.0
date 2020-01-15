@@ -1,0 +1,33 @@
+<form #myForm="ngForm" (ngSubmit)="OnAddCallMe(myForm)">
+        <legend>Add Employee</legend>
+    
+        <div class="form-group">
+            <label for="No">No</label>
+            <input ngModel type="text" class="form-control" id="No" name="No" placeholder="Enter No">
+        </div>
+    
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input ngModel type="text" class="form-control" id="Name" name="Name" placeholder="Enter Name">
+        </div>
+    
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input ngModel type="text" class="form-control" id="Age" name="Age" placeholder="Enter Age">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Add Record</button>
+        <br>
+        
+            
+        <span class="label label-warning">{{message}}</span>
+        
+
+        <button type="button" class="btn btn-success" (click)="GoBackHome()">Go Back to Home</button>
+</form>
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,26 @@
+
+
+<form #loginForm="ngForm" (ngSubmit)="SignIn(loginForm)">
+    <legend>Login Here</legend>
+
+    <div class="form-group">
+        <label for="UName">User Name</label>
+        <input ngModel type="text" class="form-control" id="UserName" name="UserName" placeholder="Enter User Name">
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input ngModel type="password" class="form-control" id="Password"  name="Password" placeholder="Enter Password Here">
+    </div>
+
+
+<span class="label label-danger">{{message}}</span>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+
+
+
+
+
