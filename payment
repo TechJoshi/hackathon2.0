@@ -1,0 +1,89 @@
+package com.app.pojos;
+
+import java.util.Date;
+
+import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.util.pattern.PatternParseException.PatternMessage;
+
+@Entity
+@Table(name = "payments")
+public class Payments {
+private Integer id;
+private User user;
+private double amount;
+private String type;
+private Date transaction_time;
+@DateTimeFormat(pattern = "yyyy-MM-dd")
+private Date nextpayment_dudate;
+public double getAmount() {
+	return amount;
+}
+
+public Payments() {
+System.out.println("in payments ctor");
+}
+
+public Payments(double amount, String type, Date transaction_time, Date nextpayment_dudate) {
+	super();
+	this.amount = amount;
+	this.type = type;
+	this.transaction_time = transaction_time;
+	this.nextpayment_dudate = nextpayment_dudate;
+}
+
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+public Integer getId() {
+	return id;
+}
+
+public void setId(Integer id) {
+	this.id = id;
+}
+@ManyToOne
+@JoinColumn(name = "")
+public User getUser() {
+	return user;
+}
+
+public void setUser(User user) {
+	this.user = user;
+}
+
+public void setAmount(double amount) {
+	this.amount = amount;
+}
+
+public String getType() {
+	return type;
+}
+public void setType(String type) {
+	this.type = type;
+}
+@Temporal(TemporalType.TIMESTAMP)
+public Date getTransaction_time() {
+	return transaction_time;
+}
+public void setTransaction_time(Date transaction_time) {
+	this.transaction_time = transaction_time;
+}
+@Temporal(TemporalType.DATE)
+public Date getNextpayment_dudate() {
+	return nextpayment_dudate;
+}
+public void setNextpayment_dudate(Date nextpayment_dudate) {
+	this.nextpayment_dudate = nextpayment_dudate;
+}
+
+@Override
+public String toString() {
+	return "Payments [id=" + id + ", amount=" + amount + ", type=" + type + ", transaction_time=" + transaction_time
+			+ ", nextpayment_dudate=" + nextpayment_dudate + "]";
+}
+
+	
+}
+
